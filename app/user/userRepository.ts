@@ -1,5 +1,4 @@
-import { parseUserEntityToUserDto, user } from "./userDto";
-import { Users } from "./userEntity";
+import { user, Users } from "./userEntity";
 
 export const findUser = async () => {
   const users = await Users.find();
@@ -15,7 +14,7 @@ export const findUserById = async (id: number) => {
 
 export const insertUser = async (user: user) => {
   const { name, img } = user;
-  const users = await Users.save({ name, img });
+  const isSave = await Users.save({ name, img });
 
-  return users;
+  return isSave;
 };
