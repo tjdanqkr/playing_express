@@ -14,7 +14,3 @@ export const errorHandler = (err: Error, req: Request, res: Response, next: Next
 export const badRequest = (res: Response) => {
   return res.status(BAD_REQUEST).render("error", { status: "error", error: "Bad Request / Parameter!!" });
 };
-
-export const noContent = (res: Response) => {
-  return res.status(NO_CONTENT).render("error", { status: "warning" });
-};
