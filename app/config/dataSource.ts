@@ -8,7 +8,7 @@ const initializationDataSource = () => {
     port: 3306,
     username: "root",
     password: "1503tjdan",
-    database: "test",
+    database: "insta",
     logging: true,
     entities: [Users],
   });

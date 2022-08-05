@@ -1,5 +1,5 @@
 import { Users } from "./userEntity";
-import { insertUserType } from "./userType";
+import { insertUserType, LoginType } from "./userType";
 
 export const findUser = async () => {
   const users = await Users.find();
@@ -14,8 +14,13 @@ export const findUserById = async (id: number) => {
 };
 
 export const insertUser = async (user: insertUserType) => {
-  const { name, img } = user;
-  const isSave = await Users.save({ name, img });
+  const { name, img, userId, password } = user;
+  const isSave = await Users.save({ name, img, userId, password });
 
   return isSave;
+};
+export const loginUser = async (user: LoginType) => {
+  const isLogin = await Users.findOneBy(user);
+
+  return isLogin;
 };
