@@ -9,9 +9,3 @@ export class Users extends BaseEntity {
   @Column()
   img: string;
 }
-
-export type user = {
-  id?: number;
-  img: string;
-  name: string;
-};
